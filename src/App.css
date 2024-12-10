@@ -1,0 +1,58 @@
+body {
+  margin: 0 auto;
+  font-family: "opensans";
+}
+.print_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #f0f0f0; 
+  padding: 10px;
+}
+
+@media print {
+ 
+  .drawer-container {
+    display: none;
+  }
+
+ 
+  @page {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact; 
+  }
+  .header {
+    display: none;
+  }
+  /* Hide elements that should not appear in print */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Footer styling for print */
+  .copyright {
+    display: block;
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
+    font-size: 12px; 
+    background: white;
+    border-top: 1px solid #ccc; 
+    page-break-after: always; 
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0; 
+    padding: 0; 
+  }
+  .print_footer {
+    page-break-after: always;
+}
+}
